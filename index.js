@@ -8,6 +8,7 @@ import companyRoute from "./routes/company.route.js";
 import jobRoute from "./routes/job.route.js";   
 import applicationRoute from "./routes/application.route.js";   
 import path from "path";
+
 //connect to MongoDB
 dotenv.config({});
 const app = express();
@@ -37,8 +38,8 @@ app.use("/api/application", applicationRoute);
 
 // ------- code for deployment --------
 if(process.env.NODE_ENV === "production"){
- const dirpath = path.resolve();
- app.use(express.static('./Frontend/dist'));
+const dirpath = path.resolve();
+app.use(express.static('./Frontend/dist'));
 app.use((req, res) => {
     res.status(200).sendFile(path.resolve(dirpath, './Frontend/dist/index.html'));
 });
