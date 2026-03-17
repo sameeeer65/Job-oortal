@@ -6,9 +6,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js",
+    "dev": "nodemon index.js", 
     "start": "nodeman index.js",
-    
+    "build" : "npm install && npm install --prefix Frontend && npm run build --prefix Frontend "
   },
   "author": "",
   "license": "ISC",
