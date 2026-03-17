@@ -7,6 +7,7 @@ import userRoute from "./routes/user.routes.js";
 import companyRoute from "./routes/company.route.js"; 
 import jobRoute from "./routes/job.route.js";   
 import applicationRoute from "./routes/application.route.js";   
+import path from "path";
 //connect to MongoDB
 dotenv.config({});
 const app = express();
@@ -34,7 +35,11 @@ app.use("/api/application", applicationRoute);
 
 
 
-
+// ------- code for deployment --------
+if(process.env.NODE_ENV === "production"){
+ const dirpath = path.resolve();
+ app.use(express.static(path.join),("frontend/dist"))
+}
 
 app.listen(PORT, () => {
     connectDB();
