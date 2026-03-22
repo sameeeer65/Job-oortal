@@ -125,27 +125,32 @@ const { user } = useSelector((store) => store.auth);
      </div>
      <div className="flex items-center justify-between ">
    
-    <RadioGroup className='flex items-center gap-4 my-5'>
+<div className='flex items-center gap-4 my-5'>
       <div className="flex items-center space-x-2">
-      <Input type="radio" 
-      name="role" 
-      value="Student" 
-       className="cursor-pointer"
-      checked={input.role === "Student"}
-        onChange={changeEventHandler} />
-
-        <Label htmlFor="r1">Student</Label>
+        <input 
+          type="radio" 
+          id="rStudent"
+          name="role" 
+          value="Student" 
+          checked={input.role === "Student"}
+          onChange={changeEventHandler}
+          className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 cursor-pointer" 
+        />
+        <Label htmlFor="rStudent">Student</Label>
       </div>
       <div className="flex items-center space-x-2">
-        <Input type="radio" 
-        name="role" 
-        value="Recruiter" 
-        className="cursor-pointer" 
-        checked={input.role === "Recruiter"} 
-        onChange={changeEventHandler} />
-        <Label htmlFor="r2">Recruiter</Label>
+        <input 
+          type="radio" 
+          id="rRecruiter"
+          name="role" 
+          value="Recruiter" 
+          checked={input.role === "Recruiter"} 
+          onChange={changeEventHandler}
+          className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 cursor-pointer" 
+        />
+        <Label htmlFor="rRecruiter">Recruiter</Label>
       </div>
-    </RadioGroup>
+    </div>
     </div>
       <div className="flex items-center  gap-2 ">
       <Label>Profile Photo</Label>
